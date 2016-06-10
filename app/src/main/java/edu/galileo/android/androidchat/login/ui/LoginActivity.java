@@ -1,4 +1,4 @@
-package edu.galileo.android.androidchat.login;
+package edu.galileo.android.androidchat.login.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.galileo.android.androidchat.R;
 import edu.galileo.android.androidchat.contactlist.ContactListActivity;
+import edu.galileo.android.androidchat.login.LoginPresenter;
+import edu.galileo.android.androidchat.login.LoginPresenterImpl;
 
 public class LoginActivity extends AppCompatActivity implements LoginView {
 
