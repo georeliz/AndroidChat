@@ -1,21 +1,34 @@
 package edu.galileo.android.androidchat.login;
 
+import android.util.Log;
+
+import edu.galileo.android.androidchat.lib.EventBus;
+import edu.galileo.android.androidchat.lib.GreenRobotEventBus;
+import edu.galileo.android.androidchat.lib.events.LoginEvent;
+
 /**
  * Created by Lab1 on 09/06/2016.
  */
 public class LoginPresenterImpl implements LoginPresenter {
-
+    private EventBus eventBus;
     private LoginView loginView;
     private LoginInteractor loginInteractor;
 
     public LoginPresenterImpl(LoginView loginView) {
         this.loginView = loginView;
         loginInteractor = new LoginInteractorImpl();
+        this.eventBus = GreenRobotEventBus.getInstace();
+    }
+
+    @Override
+    public void onCreate() {
+        eventBus.register(this);
     }
 
     @Override
     public void onDestroy() {
         loginView = null;
+        eventBus.unregister(this);
     }
 
     @Override
@@ -45,6 +58,36 @@ public class LoginPresenterImpl implements LoginPresenter {
             loginView.showProgress();
         }
         loginInteractor.doSignUp(email, password);
+    }
+
+    @Override
+    public void onEventMainThread(LoginEvent event) {
+        switch (event.getEventType()){
+            case LoginEvent.onSignInSuccess:
+                onSignInSuccess();
+                break;
+            case LoginEvent.onSignInErro:
+                onSignInError(event.getErrorMessage());
+                break;
+            case LoginEvent.onSignUpErro:
+                onSignUpError(event.getErrorMessage());
+                break;
+            case LoginEvent.onSignUpSuccess:
+                onSignUpSuccess();
+                break;
+            case LoginEvent.onFailedToRecoverSession:
+                onFailedToRecoverSession();
+                break;
+        }
+    }
+
+    private void onFailedToRecoverSession() {
+        if (loginView !=null) {
+            loginView.hideProgress();
+            loginView.enableInputs();
+
+        }
+        Log.e("LoginPresenterImp","onFailedToRecoverSession");
     }
 
     private void onSignInSuccess(){
