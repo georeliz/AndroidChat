@@ -32,11 +32,12 @@ dependencies {
     compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
     compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:support-v4:$rootProject.supportLibraryVersion"
 
     compile "com.firebase:firebase-client-android:$rootProject.ext.firebaseClientVersion"
     compile "de.hdodenhof:circleimageview:$rootProject.ext.circleImageViewVersion"
     compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     compile "org.greenrobot:eventbus:$rootProject.ext.eventBusVersion"
     compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    compile 'com.android.support:support-v4:23.4.0'
 }

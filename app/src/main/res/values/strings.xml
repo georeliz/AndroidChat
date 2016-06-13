@@ -12,5 +12,11 @@
     <string name="contactlist.menu.action.signoff">Sign Out</string>
     <string name="contactlist.title">Contacts</string>
 
+    <string name="addcontact.message.title">Add Contact</string>
+    <string name="addcontact.message.add">Acept</string>
+    <string name="addcontact.message.cancel">Cancel</string>
+    <string name="addcontact.message.contactadded">Contact Added</string>
+    <string name="addcontact.error.message">User does not exist</string>
+
 
 </resources>
