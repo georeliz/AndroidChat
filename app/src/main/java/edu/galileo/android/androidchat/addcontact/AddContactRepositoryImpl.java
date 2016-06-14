@@ -31,7 +31,7 @@ public class AddContactRepositoryImpl implements AddContactRepository {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                if (user !=null){
+                if (user != null){
                     Firebase myContactReference = helper.getMyContactsReference();
                     myContactReference.child(key).setValue(user.isOnline());
 

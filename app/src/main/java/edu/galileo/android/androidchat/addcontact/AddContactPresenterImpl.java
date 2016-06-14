@@ -23,13 +23,13 @@ public class AddContactPresenterImpl implements AddContactPresenter {
 
     @Override
     public void onShow() {
-        view = null;
         eventBus.register(this);
 
     }
 
     @Override
     public void onDestroy() {
+        view = null;
         eventBus.unregister(this);
 
     }
