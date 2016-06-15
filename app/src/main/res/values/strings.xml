@@ -17,6 +17,12 @@
     <string name="addcontact.message.cancel">Cancel</string>
     <string name="addcontact.message.contactadded">Contact Added</string>
     <string name="addcontact.error.message">User does not exist</string>
+    
+    
+    <string name="signup.button.cancel">CANCEL</string>
+    <string name="signup.button.acept">ACEPT</string>
+    <string name="signup.message.email">Correo Electrónico</string>
+    <string name="signup.message.password">Password</string>
 
 
 </resources>

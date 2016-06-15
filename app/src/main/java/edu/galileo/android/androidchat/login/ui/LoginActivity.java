@@ -17,6 +17,7 @@ import edu.galileo.android.androidchat.R;
 import edu.galileo.android.androidchat.contactlist.ui.ContactListActivity;
 import edu.galileo.android.androidchat.login.LoginPresenter;
 import edu.galileo.android.androidchat.login.LoginPresenterImpl;
+import edu.galileo.android.androidchat.singup.SignUpActivity;
 
 public class LoginActivity extends AppCompatActivity implements LoginView {
 
@@ -72,7 +73,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     @Override
     @OnClick(R.id.btnSignup)
     public void handleSignUp() {
-        loginPresenter.registerNewUser(editTxtEmail.getText().toString(), editTxtPassword.getText().toString());
+        startActivity(new Intent(this, SignUpActivity.class));
+       // loginPresenter.registerNewUser(editTxtEmail.getText().toString(), editTxtPassword.getText().toString());
 
     }
     @Override
