@@ -6,7 +6,7 @@ package edu.galileo.android.androidchat.chat;
 public interface ChatRepository {
     void changeConnectionStatus(boolean online);
 
-    void setChatRecipient(String recipient);
+    void setRecipient(String recipient);
     void sendMessage(String msg);
 
     void subscribe();

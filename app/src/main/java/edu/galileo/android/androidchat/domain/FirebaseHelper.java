@@ -17,8 +17,8 @@ import edu.galileo.android.androidchat.entities.User;
 public class FirebaseHelper {
     private Firebase dataReference;
     private final static String SEPARATOR = "__";
-    private final static String USERS_PATH = "users";
     private final static String CHATS_PATH = "chats";
+    private final static String USERS_PATH = "users";
     private final static String CONTACTS_PATH = "contacts";
     private final static String FIREBASE_URL = "https://androidchat1006.firebaseio.com";
 
