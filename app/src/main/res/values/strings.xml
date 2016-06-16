@@ -23,6 +23,7 @@
     <string name="signup.button.acept">ACEPT</string>
     <string name="signup.message.email">Correo Electrónico</string>
     <string name="signup.message.password">Password</string>
+    <string name="sigup.message.title">CREATE ACCOUNT</string>
 
 
 </resources>
