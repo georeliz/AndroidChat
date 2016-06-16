@@ -11,6 +11,5 @@ public interface LoginPresenter {
 
     void checkForAuthenticatedUser();
     void validateLogin(String email, String password);
-    void registerNewUser(String email, String password);
     void onEventMainThread(LoginEvent event);
 }

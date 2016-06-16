@@ -75,7 +75,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     public void handleSignUp() {
         startActivity(new Intent(this, SignUpActivity.class));
        // loginPresenter.registerNewUser(editTxtEmail.getText().toString(), editTxtPassword.getText().toString());
-
     }
     @Override
     @OnClick(R.id.btnSignin)
@@ -86,7 +85,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     @Override
     public void navigateToMainScreen() {
         Intent intent = new Intent(this, ContactListActivity.class);
-        intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK | intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
@@ -97,17 +96,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         editTxtPassword.setError(msgError);
     }
 
-    @Override
-    public void newUserSuccess() {
-        Snackbar.make(layoutMainContainer, R.string.login_notice_message_signup, Snackbar.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void newUserError(String error) {
-        editTxtPassword.setText("");
-        String msgError = String.format(getString(R.string.login_error_message_signup), error);
-        editTxtPassword.setError(msgError);
-    }
 
     private void setInputs(boolean enabled){
         editTxtEmail.setEnabled(enabled);
